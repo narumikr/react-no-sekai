@@ -3,24 +3,24 @@
 ## 必要環境
 
 - Node.js 18 以上
-- npm 9 以上
+- pnpm 10 以上
 
 ## セットアップ
 
 ```bash
-npm install
+pnpm install
 ```
 
 ## 開発サーバの起動
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ## ビルド
 
 ```bash
-npm run build
+pnpm build
 ```
 
 `dist/` に静的ファイルが生成されます。任意の HTTP サーバに配置するだけで動作します。
@@ -28,13 +28,13 @@ npm run build
 ## ビルド結果のプレビュー
 
 ```bash
-npm run preview
+pnpm preview
 ```
 
 ## Lint / Format
 
 ```bash
-npm run check
+pnpm check
 ```
 
 ---
