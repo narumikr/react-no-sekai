@@ -3,7 +3,7 @@
     "chrome-devtools": {
       "type": "stdio",
       "command": "npx",
-      "args": ["chrome-devtools-mcp@latest", "--browserUrl=http://localhost:9222"]
+      "args": ["-y", "chrome-devtools-mcp@0.21.0", "--browserUrl=http://localhost:9222"]
     },
     "drawio": {
       "command": "npx",
