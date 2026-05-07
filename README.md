@@ -12,6 +12,7 @@ React + Vite のプロジェクト開始テンプレートリポジトリ
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](#)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)](#)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff)](#)
+[![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=fff)](#)
 
 ### 💫 **_Getting Started_** 💫![Leo/need-divider](https://capsule-render.vercel.app/api?type=rect&height=2&color=0:3367cc,100:f5f5f7)
 
@@ -43,6 +44,16 @@ pnpm build
 pnpm preview
 ```
 
+#### テスト
+
+```bash
+pnpm test
+```
+
+> [!note]
+>
+> `pnpm test:watch` でファイル変更を監視しながら実行できます。
+
 #### Lint / Format
 
 ```bash
@@ -51,27 +62,22 @@ pnpm check
 
 ### 🍀 **_HashRouter への切り替え_** 🍀![MOREMORE-JUMP-divider](https://capsule-render.vercel.app/api?type=rect&height=2&color=0:88dd44,100:f5f5f7)
 
-デプロイ先のサーバでフォールバック設定（全リクエストを `index.html` に向ける設定）ができない場合、`BrowserRouter` を `HashRouter` に切り替えてください。
+デプロイ先のサーバでフォールバック設定（全リクエストを `index.html` に向ける設定）ができない場合、`createBrowserRouter` を `createHashRouter` に切り替えてください。
 URL が `/about` → `/#/about` 形式になり、リロード時の 404 を回避できます。
 
 **変更ファイル: `src/App.tsx`**
 
 ```diff
--import { BrowserRouter, Route, Routes } from 'react-router-dom';
-+import { HashRouter, Route, Routes } from 'react-router-dom';
+-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
++import { createHashRouter, RouterProvider } from 'react-router-dom';
+ import { routes } from './routes';
+
+-const router = createBrowserRouter(routes);
++const router = createHashRouter(routes);
 
  export function App() {
-   return (
--    <BrowserRouter>
-+    <HashRouter>
-       <Routes>
-         <Route path="/" element={<Top />} />
-         <Route path="*" element={<NotFound />} />
-       </Routes>
--    </BrowserRouter>
-+    </HashRouter>
-   );
+   return <RouterProvider router={router} />;
  }
 ```
 
-変更箇所は `BrowserRouter` → `HashRouter` の置き換えのみです。
+変更箇所は `createBrowserRouter` → `createHashRouter` の置き換えのみです。

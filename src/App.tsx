@@ -1,14 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { NotFound } from './pages/NotFound';
-import { Top } from './pages/Top';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { routes } from './routes';
+
+const router = createBrowserRouter(routes);
 
 export function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Top />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 }
