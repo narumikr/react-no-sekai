@@ -17,7 +17,7 @@ describe('Topページ', () => {
     expect(screen.getByRole('heading', { name: TOP_PAGE.BodyHelloSekai })).toBeInTheDocument();
   });
 
-  test(`タイトルが "${TOP_PAGE.Title}" に設定される`, () => {
+  test(`タイトルが "${TOP_PAGE.MetaTitle}" に設定される`, () => {
     render(
       <HelmetProvider>
         <MemoryRouter>
@@ -25,6 +25,6 @@ describe('Topページ', () => {
         </MemoryRouter>
       </HelmetProvider>,
     );
-    expect(document.title).toBe(TOP_PAGE.Title);
+    expect(document.title).toBe(TOP_PAGE.MetaTitle);
   });
 });
