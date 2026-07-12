@@ -2,6 +2,7 @@
  * Top Page UI文言定義
  */
 export const TOP_PAGE = {
-  Title: 'React no Sekai',
+  MetaTitle: 'Top',
+  Title: 'React no SEKAI',
   BodyHelloSekai: 'Hello SEKAI!',
 };

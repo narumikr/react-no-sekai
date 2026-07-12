@@ -5,7 +5,7 @@ export function Top() {
   return (
     <>
       <Helmet>
-        <title>{TOP_PAGE.Title}</title>
+        <title>{TOP_PAGE.MetaTitle}</title>
       </Helmet>
       <main className="flex min-h-screen items-center justify-center">
         <h1 className="text-4xl font-bold">{TOP_PAGE.BodyHelloSekai}</h1>
